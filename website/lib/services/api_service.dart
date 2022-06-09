@@ -4,12 +4,12 @@ import 'package:website/models/github_model.dart';
 
 class ApiData {
   static List<GithubTrendingModel> githubTrendingModel;
+  
   static Future<dynamic> getData() async {
     githubTrendingModel = [];
-    var url =
-        "https://github-trending-api.now.sh/repositories?language=&since=daily";
-
+    var url = "https://github-trending-api.now.sh/repositories?language=&since=daily";
     var response = await http.get(url);
+
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body);
       print(jsonResponse);
@@ -17,7 +17,9 @@ class ApiData {
         ApiData.githubTrendingModel.add(GithubTrendingModel.fromJson(data));
       });
       print(ApiData.githubTrendingModel);
-    } else {
+    }
+    else
+    {
       print("Request failed with status: ${response.statusCode}.");
     }
   }
