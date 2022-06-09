@@ -12,7 +12,8 @@ Widget tableCard(BuildContext context, List<GithubTrendingModel> data) {
             : MediaQuery.of(context).size.width - 330,
         padding: EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(width: 1, color: Colors.grey))),
+          border: Border(bottom: BorderSide(width: 1, color: Colors.grey))
+        ),
         child: Table(
           columnWidths: <int, TableColumnWidth>{
             0: FixedColumnWidth((MediaQuery.of(context).size.width / 5)),

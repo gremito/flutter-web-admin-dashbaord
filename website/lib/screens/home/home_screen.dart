@@ -9,8 +9,7 @@ class HomeScreen extends StatefulWidget {
   HomeScreenState createState() => HomeScreenState();
 }
 
-class HomeScreenState extends State<HomeScreen>
-    with SingleTickerProviderStateMixin {
+class HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
   TabController tabController;
   int active = 0;
   @override
@@ -34,8 +33,7 @@ class HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading:
-            MediaQuery.of(context).size.width < 1300 ? true : false,
+        automaticallyImplyLeading: MediaQuery.of(context).size.width < 1300 ? true : false,
         title: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
@@ -54,9 +52,7 @@ class HomeScreenState extends State<HomeScreen>
             ]),
         actions: <Widget>[
           InkWell(
-            onTap: () {
-              print("download");
-            },
+            onTap: () { print("download"); },
             child: Container(
               margin: EdgeInsets.all(12),
               padding: EdgeInsets.all(8),
@@ -67,21 +63,11 @@ class HomeScreenState extends State<HomeScreen>
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  Icon(
-                    Icons.cloud_download,
-                    color: Colors.black,
-                    size: 22,
-                  ),
-                  SizedBox(
-                    width: 4,
-                  ),
+                  Icon( Icons.cloud_download, color: Colors.black, size: 22 ),
+                  SizedBox( width: 4 ),
                   Text(
                     "Download Now",
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontFamily: 'HelveticaNeue',
-                    ),
+                    style: TextStyle( fontSize: 12, color: Colors.black, fontFamily: 'HelveticaNeue' ),
                   ),
                 ],
               ),
@@ -96,9 +82,7 @@ class HomeScreenState extends State<HomeScreen>
             child: IconButton(
               padding: EdgeInsets.all(0),
               icon: Icon(Icons.exit_to_app),
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: () { Navigator.pop(context); }
             ),
           ),
           SizedBox(width: 32),
@@ -126,18 +110,15 @@ class HomeScreenState extends State<HomeScreen>
             child: TabBarView(
               physics: NeverScrollableScrollPhysics(),
               controller: tabController,
-              children: [
-                Dashboard(),
-                FormMaterial(),
-                HeroAnimation(),
-              ],
+              children: [ Dashboard(), FormMaterial(), HeroAnimation() ]
             ),
           )
         ],
       ),
       drawer: Padding(
           padding: EdgeInsets.only(top: 56),
-          child: Drawer(child: listDrawerItems(true))),
+          child: Drawer(child: listDrawerItems(true))
+      ),
     );
   }
 
@@ -157,16 +138,11 @@ class HomeScreenState extends State<HomeScreen>
             child: Container(
               padding: EdgeInsets.only(top: 22, bottom: 22, right: 22),
               child: Row(children: [
-                Icon(Icons.dashboard),
-                SizedBox(
-                  width: 8,
-                ),
+                Icon( Icons.dashboard ),
+                SizedBox( width: 8 ),
                 Text(
                   "Dashboard",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontFamily: 'HelveticaNeue',
-                  ),
+                  style: TextStyle( fontSize: 18, fontFamily: 'HelveticaNeue' )
                 ),
               ]),
             ),
@@ -184,16 +160,11 @@ class HomeScreenState extends State<HomeScreen>
             child: Container(
               padding: EdgeInsets.only(top: 22, bottom: 22, right: 22),
               child: Row(children: [
-                Icon(Icons.exit_to_app),
-                SizedBox(
-                  width: 8,
-                ),
+                Icon( Icons.exit_to_app ),
+                SizedBox( width: 8 ),
                 Text(
                   "Forms",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontFamily: 'HelveticaNeue',
-                  ),
+                  style: TextStyle( fontSize: 18, fontFamily: 'HelveticaNeue' ),
                 ),
               ]),
             ),
@@ -210,16 +181,11 @@ class HomeScreenState extends State<HomeScreen>
             child: Container(
               padding: EdgeInsets.only(top: 22, bottom: 22, right: 22),
               child: Row(children: [
-                Icon(Icons.category),
-                SizedBox(
-                  width: 8,
-                ),
+                Icon( Icons.category ),
+                SizedBox( width: 8 ),
                 Text(
                   "Hero",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontFamily: 'HelveticaNeue',
-                  ),
+                  style: TextStyle( fontSize: 18, fontFamily: 'HelveticaNeue' ),
                 ),
               ]),
             ),

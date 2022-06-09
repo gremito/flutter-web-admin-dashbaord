@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget tickets(Color color, BuildContext context, IconData icon,
-    String ticketsNumber, String newCount) {
+Widget tickets(Color color, BuildContext context, IconData icon, String ticketsNumber, String newCount) {
   return Card(
     elevation: 2,
     child: Container(
